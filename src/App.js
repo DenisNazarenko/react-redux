@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
+
 class App extends Component {
   render() {
     return (
@@ -11,22 +14,8 @@ class App extends Component {
           <h2>Welcome to React with Redux</h2>
         </div>
         <div className="Todo-App">
-          <form>
-            <input type="text"/>
-          </form>
-          <div className="Todo-List">
-            <ul>
-              <li>
-                <input type="checkbox"/> Create Static UI
-              </li>
-              <li>
-                <input type="checkbox"/> Create Initial State
-              </li>
-              <li>
-                <input type="checkbox"/> Use State to Render UI
-              </li>
-            </ul>
-          </div>
+          <TodoForm />
+          <TodoList todos={this.props.todos} />
         </div>
       </div>
     );
